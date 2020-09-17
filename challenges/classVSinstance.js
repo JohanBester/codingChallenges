@@ -48,7 +48,6 @@ function readLine() {
 
 //**** DO YOUR WORK HERE BELOW ****/
 //*********************************/
-
 class Person {
     constructor(initialAge) {
         // Add some more code to run some checks on initialAge
@@ -76,6 +75,7 @@ class Person {
     }
 }
 
+//**** Leave this code as is ****/
 function main() {
     var T=parseInt(readLine());
     for(i=0;i<T;i++){
