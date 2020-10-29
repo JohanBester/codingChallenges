@@ -9,7 +9,7 @@ function fetch() {
     lstNms = lstNms.toString().split("\r\n");
     lastNamesList = lstNms;
     console.log("typeof lastNamesList is ...", typeof lastNamesList);
-    console.log(lastNamesList);
+    console.log("lastNamesList", lastNamesList);
   });
 
   console.log("lastNamesList = ", lastNamesList);
