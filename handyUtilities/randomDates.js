@@ -13,32 +13,35 @@
 
 function randomDate(start, end, times = 1) {
   const fs = require("fs");
-  const file = "randomDates.txt";
-  let data = "";
 
   !start ? (start = new Date(0)) : (start = new Date(start));
   !end ? (end = new Date()) : (end = new Date(end));
-  numTimes = times;
 
+  let numTimes = times;
+  let dataset = [];
   let i = 1;
 
   while (i < numTimes + 1) {
     let rndDate = new Date(
       start.getTime() + Math.random() * (end.getTime() - start.getTime())
     );
+
+    dataset.push(rndDate);
     !data == "" ? (data += `\n${rndDate}`) : (data = `${rndDate}`);
+
     i++;
   }
 
+  // Write data in to 'file'
+  const file = "randomDates.txt";
   let writeData = function writeDataFile(data, file) {
-    // Write data in to 'file'
     fs.writeFile(file, data, (err) => {
-      // In case of a error throw err.
       if (err) throw err;
     });
   };
-
   return writeData(data, file);
+
+  return dataset;
 }
 
 randomDate(0, 0, 23);
