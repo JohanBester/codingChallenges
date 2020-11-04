@@ -4,15 +4,6 @@
 //      with random customer names
 //      and random transaction amounts
 
-// import randomCustomerNames from "./randomCustomerNames";
-// randomCustomerNames(times)
-// import randomDates from "./randomDates";
-// randomDates(start, end, times) in the format
-//    of... (yyyy, m, d), (yyyy, m, d)
-// import randomAmount from "./randomAmount";
-// randomAmount(min, max, times) delimited as ...
-//    1 dollar <= amount <= 1 million
-
 function randomDataset(times, startDate, endDate, minAmount, MaxAmount) {
   // Randomizer for all the functions
   const rand = function randomNumber(min = 1.1, max = 99.99) {
