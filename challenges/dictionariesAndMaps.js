@@ -65,16 +65,17 @@ function processData(input) {
   let data = input.split("\n");
   //get the number of entries out of the array
   let numEntries = parseInt(data.shift());
-  // move all the queries into an array
+  // move all the queries into an separate array
   let queries = data.splice(numEntries);
-  // turn names and numbers into a phoneList array
+  // turn remaining names and numbers into a phoneList array
   let phoneList = data.map((item) => item.split(" "));
   // turn phone list array into a Map
   let phoneListMap = new Map(phoneList);
 
-  // run queries to find matches in phoneListMap
+  // run queries to find the matches in the phoneListMap
   queries.map((name) => {
     if (phoneListMap.has(name)) {
+      // output name=number as required -- note: no spaces!
       console.log(name + "=" + phoneListMap.get(name));
     } else {
       console.log("Not found");
